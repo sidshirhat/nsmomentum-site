@@ -1,0 +1,2707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NS Momentum - AI Phone Receptionists that answer instantly, qualify leads, and book appointments 24/7. Voice cloning included.">
+    <meta name="keywords" content="AI receptionist, phone answering service, voice cloning, lead qualification, appointment booking">
+    <title>NS Momentum - AI Phone Receptionists That Never Miss a Call</title>
+    
+    <!-- Calendly embed script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+
+    
+    <style>
+        :root {
+            /* Primary - Trust Blue */
+            --primary-blue: #0A4D8C;
+            --primary-blue-light: #1E6BB8;
+            --primary-blue-dark: #083763;
+            
+            /* Secondary - Success Green */
+            --success-green: #10B981;
+            --success-green-light: #34D399;
+            --success-green-dark: #059669;
+            
+            /* Accent Colors */
+            --accent-coral: #FF6B6B;
+            --accent-purple: #8B5CF6;
+            
+            /* Neutrals - Modern Dark Theme */
+            --dark-bg: #0F172A;
+            --darker-bg: #020617;
+            --card-bg: #1E293B;
+            --card-hover: #334155;
+            
+            /* Text */
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-dim: #64748B;
+            
+            /* Gradients */
+            --primary-gradient: linear-gradient(135deg, #0A4D8C 0%, #8B5CF6 100%);
+            --secondary-gradient: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+            --hero-gradient: linear-gradient(135deg, rgba(10, 77, 140, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            
+            /* Legacy support */
+            --accent-blue: #0A4D8C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Tubelight Navbar Styles */
+        .tubelight-nav {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.5);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 6px;
+            display: flex;
+            gap: 8px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-item.active {
+            color: var(--primary-blue-light);
+            background: rgba(30, 107, 184, 0.1);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-blue-light);
+        }
+
+        .tubelight-glow {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue-light), var(--primary-blue));
+            border-radius: 4px 4px 0 0;
+            box-shadow: 0 0 12px rgba(30, 107, 184, 0.6),
+                        0 0 24px rgba(10, 77, 140, 0.4);
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        .tubelight-glow::before {
+            content: '';
+            position: absolute;
+            width: 48px;
+            height: 24px;
+            background: radial-gradient(circle, rgba(30, 107, 184, 0.3) 0%, transparent 70%);
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: blur(8px);
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 16px rgba(30, 107, 184, 0.8),
+                            0 0 32px rgba(10, 77, 140, 0.6);
+            }
+        }
+
+        /* Legacy header styles for mobile fallback */
+        header {
+            display: none;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-coral);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-blue-light);
+            color: var(--primary-blue-light);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(30, 107, 184, 0.1);
+        }
+
+        /* Hero Section - Futuristic */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 2rem 4rem;
+            overflow: hidden;
+            background: var(--dark-bg);
+            /* Hardware acceleration & containment */
+            transform: translateZ(0);
+            will-change: transform;
+            contain: layout style paint;
+        }
+
+        /* Dot Grid Background */
+        .hero-dot-background {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+            background: var(--dark-bg);
+        }
+
+        /* Dot grid pattern using radial gradient */
+        .hero-dot-background::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle, rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            animation: dotPulse 20s ease-in-out infinite;
+        }
+
+        /* Subtle animation */
+        @keyframes dotPulse {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Gradient overlay for depth */
+        .hero-dot-background::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                circle at 70% 110%,
+                transparent 0%,
+                transparent 40%,
+                var(--dark-bg) 100%
+            );
+            pointer-events: none;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--hero-gradient);
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* CSS 3D Phone Mockup */
+        .hero-phone-3d {
+            position: absolute;
+            right: 8%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            height: 700px;
+            z-index: 5;
+            perspective: 1000px;
+        }
+
+        .phone-3d-wrapper {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            /* Remove animation: phone3dFloat - now controlled by mouse */
+        }
+
+        @keyframes phone3dFloat {
+            0%, 100% {
+                transform: rotateY(-8deg) rotateX(3deg) translateY(0);
+            }
+            50% {
+                transform: rotateY(8deg) rotateX(-3deg) translateY(-20px);
+            }
+        }
+
+        .phone-frame-3d {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.6),
+                0 0 40px var(--success-green);
+            border: 3px solid var(--success-green);
+            animation: greenGlow 2s ease-in-out infinite;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes greenGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 30px 80px rgba(0, 0, 0, 0.6),
+                    0 0 20px var(--success-green);
+            }
+            50% {
+                box-shadow: 
+                    0 30px 80px rgba(0, 0, 0, 0.6),
+                    0 0 40px var(--success-green),
+                    0 0 60px rgba(16, 185, 129, 0.5);
+            }
+        }
+
+        .phone-notch-3d {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .phone-screen-3d {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #0a0e27 0%, #1a1d3e 100%);
+            border-radius: 42px;
+            padding: 50px 20px 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Screen Content */
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .status-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .call-interface-3d {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .caller-info {
+            text-align: center;
+        }
+
+        .avatar-3d {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            margin: 0 auto 20px;
+            animation: avatarPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes avatarPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .caller-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .caller-status {
+            font-size: 16px;
+            color: var(--success-green);
+            font-weight: 600;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        @keyframes statusBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .call-actions {
+            display: flex;
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .action-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .decline-3d {
+            background: #ef4444;
+            box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .answer-3d {
+            background: var(--success-green);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            animation: answerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes answerPulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 40px rgba(16, 185, 129, 0.8);
+            }
+        }
+
+        /* Pulsing Call Waves */
+        .call-waves {
+            position: absolute;
+            right: 15%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            z-index: 0;
+        }
+
+        .call-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(16, 185, 129, 0.15);
+            border-radius: 50%;
+            animation: waveExpand 3s ease-out infinite;
+        }
+
+        .call-wave:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .call-wave:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes waveExpand {
+            0% {
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+
+
+        /* Abstract Phone Icons */
+        .hero-phone-icon {
+            position: absolute;
+            opacity: 0.06;
+            z-index: 0;
+        }
+
+        .phone-icon-1 {
+            width: 150px;
+            height: 150px;
+            top: 15%;
+            left: 10%;
+        }
+
+        .phone-icon-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            right: 20%;
+        }
+
+        .phone-icon-3 {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            left: 5%;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /* Hero Content - LEFT ALIGNED */
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            text-align: left;
+            padding: 40px 20px 40px 80px;
+        }
+
+        .hero-left {
+            text-align: left;
+        }
+
+        .hero-right {
+            display: none;
+        }
+
+        /* Main Headline - Futuristic - LEFT ALIGNED */
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 32px;
+            line-height: 1.1;
+            text-align: left;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-headline {
+            color: #ffffff;
+        }
+
+        .hero-title-line {
+            display: flex;
+            justify-content: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .hero-word {
+            opacity: 0;
+            animation: wordFadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes wordFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Subtitle with Industry Flip - LEFT ALIGNED */
+        .hero-subheadline {
+            font-size: 28px;
+            font-weight: 700;
+            color: #8892b0;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: subtitleFadeIn 0.8s ease-out 2.4s forwards;
+            text-align: left;
+        }
+
+        @keyframes subtitleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .highlight-box {
+            display: none;
+        }
+
+        /* CTA Button - Futuristic - LEFT ALIGNED */
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-top: 0;
+            opacity: 0;
+            animation: ctaFadeIn 0.6s ease-out 3.2s forwards;
+        }
+
+        @keyframes ctaFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 48px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: var(--accent-coral);
+            border: 2px solid var(--accent-coral);
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .hero-cta .btn:hover {
+            background: #FF5252;
+            border-color: #FF5252;
+            box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+        }
+
+        .cta-arrow {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta .btn:hover .cta-arrow {
+            transform: translateX(5px);
+        }
+
+        .hero-cta p {
+            text-align: left;
+            margin: 0;
+        }
+
+        /* Phone Mockup Styles */
+        .phone-mockup {
+            position: relative;
+            width: 370px;
+            height: 740px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes greenPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px 5px rgba(16, 185, 129, 0.6),
+                            0 0 40px 10px rgba(16, 185, 129, 0.4),
+                            0 20px 60px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px 10px rgba(16, 185, 129, 0.8),
+                            0 0 60px 20px rgba(16, 185, 129, 0.6),
+                            0 20px 60px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .phone-frame {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            border: 3px solid var(--success-green);
+            animation: greenPulse 2.5s ease-in-out infinite;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #1a1d2e;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 24px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .phone-content {
+            padding: 50px 24px 24px;
+            color: var(--text-light);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-status-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #8892b0;
+            margin-bottom: 2rem;
+            padding: 0 4px;
+        }
+
+        .ai-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .ai-header h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .call-interface {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .caller-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .ringing-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--success-green);
+            animation: ringPulse 2s ease-out infinite;
+        }
+
+        .ringing-animation:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .ringing-animation:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes ringPulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .caller-info {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .caller-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .caller-type {
+            font-size: 1rem;
+            color: #8892b0;
+        }
+
+        .call-buttons {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: auto;
+            padding-bottom: 2rem;
+        }
+
+        .call-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .call-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-answer {
+            background: var(--success-green);
+            color: white;
+        }
+
+        .btn-decline {
+            background: #ef4444;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(30, 107, 184, 0.2);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue-light);
+            box-shadow: 0 10px 30px rgba(30, 107, 184, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-align: left;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        /* How It Works Section */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(30, 107, 184, 0.2);
+            position: relative;
+            text-align: left;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(30, 107, 184, 0.2);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-section p {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--darker-bg);
+            border: 1px solid rgba(30, 107, 184, 0.3);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue-light);
+            box-shadow: 0 0 0 3px rgba(30, 107, 184, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input.error,
+        .form-group select.error,
+        .form-group textarea.error {
+            border-color: #ef4444;
+        }
+
+        /* Pricing Section - Creative Tilted Cards */
+        .pricing-creative {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--dark-bg);
+        }
+
+        .pricing-cards-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        /* Starter Card */
+        .pricing-card-starter {
+            width: 320px;
+            background: var(--card-bg);
+            border: 1px solid rgba(30, 107, 184, 0.3);
+            border-radius: 24px;
+            padding: 48px 36px;
+            transform: rotate(-6deg);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 0 1px rgba(30, 107, 184, 0.08) inset;
+        }
+
+        .pricing-card-starter:hover {
+            transform: rotate(-6deg) scale(1.05);
+        }
+
+        /* Professional Card (Center) */
+        .pricing-card-professional {
+            width: 360px;
+            background: var(--primary-gradient);
+            border: 4px solid rgba(30, 107, 184, 0.5);
+            border-radius: 32px;
+            padding: 60px 44px;
+            transform: translateY(-20px) scale(1.1);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(30, 107, 184, 0.4);
+            position: relative;
+        }
+
+        .pricing-card-professional:hover {
+            transform: translateY(-20px) scale(1.12);
+        }
+
+        .best-deal-badge {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success-green);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #ffffff;
+            animation: badgeBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateX(-50%) translateY(10px); }
+            50% { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* Enterprise Card */
+        .pricing-card-enterprise {
+            width: 320px;
+            background: var(--card-bg);
+            border: 1px solid rgba(30, 107, 184, 0.3);
+            border-radius: 24px;
+            padding: 48px 36px;
+            transform: rotate(6deg);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 0 1px rgba(30, 107, 184, 0.08) inset;
+        }
+
+        .pricing-card-enterprise:hover {
+            transform: rotate(6deg) scale(1.05);
+        }
+
+        /* Card Content Styling */
+        .pricing-card-starter .pricing-card-title,
+        .pricing-card-enterprise .pricing-card-title {
+            color: var(--primary-blue-light);
+        }
+
+        .pricing-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* Removed duplicate - now using var(--primary-blue-light) */
+
+        .pricing-card-professional .pricing-card-title {
+            color: #ffffff;
+        }
+
+        .pricing-card-price {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card-starter .pricing-card-price,
+        .pricing-card-enterprise .pricing-card-price {
+            color: #ffffff;
+        }
+
+        .pricing-card-professional .pricing-card-price {
+            color: #ffffff;
+            font-size: 52px;
+        }
+
+        .pricing-card-features {
+            list-style: none;
+            margin-bottom: 32px;
+            padding: 0;
+        }
+
+        .pricing-card-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .feature-check {
+            color: #10b981;
+            margin-right: 12px;
+            font-weight: 700;
+        }
+
+        .pricing-card-starter .pricing-card-features,
+        .pricing-card-enterprise .pricing-card-features {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .pricing-card-professional .pricing-card-features {
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .pricing-card-button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pricing-card-starter .pricing-card-button,
+        .pricing-card-enterprise .pricing-card-button {
+            background: var(--accent-coral);
+            color: #ffffff;
+        }
+
+        .pricing-card-starter .pricing-card-button:hover,
+        .pricing-card-enterprise .pricing-card-button:hover {
+            background: #FF5252;
+        }
+
+        .pricing-card-professional .pricing-card-button {
+            background: #ffffff;
+            color: var(--primary-blue-dark);
+        }
+
+        .pricing-card-professional .pricing-card-button:hover {
+            background: #F8FAFC;
+        }
+
+        /* Pricing Calculator */
+        .calculator {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(30, 107, 184, 0.2);
+            margin-top: 3rem;
+        }
+
+        .calculator label {
+            text-align: left;
+        }
+
+        .calculator p {
+            text-align: left;
+        }
+
+        .calculator-form {
+            margin-bottom: 2rem;
+        }
+
+        .slider-container {
+            margin-bottom: 2rem;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .slider-label label {
+            text-align: left;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: var(--darker-bg);
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .checkbox-group {
+            margin-bottom: 2rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .checkbox-item label {
+            text-align: left;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .estimate-result {
+            background: var(--darker-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary-blue-light);
+            text-align: center;
+        }
+
+        .estimate-result p {
+            text-align: center;
+        }
+
+        .estimate-result h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .estimate-price {
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(30, 107, 184, 0.2);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            background: rgba(30, 107, 184, 0.1);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* Calendly Section */
+        .calendly-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(30, 107, 184, 0.2);
+        }
+
+        /* Pricing buttons scroll functionality */
+        .pricing-card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .calendly-section p {
+            text-align: left;
+        }
+
+        .calendly-inline-widget {
+            min-height: 630px;
+            background: var(--darker-bg);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(30, 107, 184, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+            text-align: left;
+        }
+
+        .footer-section p {
+            text-align: left;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-blue-light);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(30, 107, 184, 0.1);
+            color: var(--text-muted);
+        }
+
+        .footer-bottom p {
+            text-align: center;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+
+
+        /* Responsive Design */
+        /* Responsive - CSS 3D Phone */
+        @media (max-width: 1400px) {
+            .hero-phone-3d {
+                width: 300px;
+                height: 600px;
+                right: 5%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-phone-3d {
+                width: 280px;
+                height: 560px;
+            }
+            
+            .caller-name {
+                font-size: 24px;
+            }
+            
+            .action-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+            
+
+
+            .pricing-card-starter,
+            .pricing-card-enterprise {
+                transform: rotate(0deg);
+            }
+            
+            .pricing-card-starter:hover,
+            .pricing-card-enterprise:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Global performance hints */
+        .hero,
+        .hero-phone-dynamic,
+        .text-flip-container,
+        .infinite-slider {
+            backface-visibility: hidden;
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-phone-3d,
+            .call-waves,
+            .hero-phone-icon {
+                display: none;
+            }
+
+            .tubelight-nav {
+                top: 16px;
+                padding: 4px;
+                gap: 4px;
+            }
+
+            .nav-item {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+
+            .tubelight-glow {
+                width: 24px;
+                height: 3px;
+            }
+
+            .hero-content {
+                padding: 5rem 20px 4rem 20px;
+                text-align: left;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-subheadline {
+                font-size: 18px;
+            }
+
+            .hero-title-line {
+                gap: 16px;
+            }
+
+            .hero-cta .btn {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+
+
+
+            .logo-cloud-section {
+                padding: 60px 0;
+            }
+            
+            .logo-cloud-title {
+                font-size: 24px;
+            }
+            
+            .logo-item {
+                height: 16px;
+            }
+            
+            .infinite-slider {
+                gap: 32px;
+            }
+
+
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .features-grid,
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-cards-container {
+                flex-direction: column;
+                gap: 60px;
+            }
+            
+            .pricing-card-professional {
+                transform: scale(1) translateY(0);
+            }
+            
+            .pricing-card-professional:hover {
+                transform: scale(1.05) translateY(0);
+            }
+
+            .pricing-card-starter,
+            .pricing-card-enterprise {
+                transform: rotate(0deg);
+            }
+            
+            .pricing-card-starter:hover,
+            .pricing-card-enterprise:hover {
+                transform: scale(1.05);
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Logo Cloud Section - Between Hero and Features */
+        .logo-cloud-section {
+            width: 100%;
+            background: var(--dark-bg);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .logo-cloud-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-cloud-heading {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .logo-cloud-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .logo-cloud-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .logo-cloud-title .highlight {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        /* Divider lines */
+        .logo-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        /* Infinite Slider Container */
+        .infinite-slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 30px 0;
+            /* Mask/fade effect on edges */
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .infinite-slider {
+            display: flex;
+            gap: 42px;
+            width: fit-content;
+            animation: infiniteScroll 25s linear infinite;
+            /* GPU acceleration */
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        .infinite-slider:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes infiniteScroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-item {
+            flex-shrink: 0;
+            height: 20px;
+            width: auto;
+            pointer-events: none;
+            user-select: none;
+            /* Invert for dark theme */
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+            transition: opacity 0.3s, transform 0.2s;
+        }
+
+        .infinite-slider:hover .logo-item {
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: rgba(16, 185, 129, 0.2);
+            border: 2px solid var(--success-green);
+            color: var(--success-green);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+            text-align: left;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Gooey Text Morphing Effect */
+        .text-flip-container {
+            position: relative;
+            display: inline-block;
+            background: var(--primary-gradient);
+            padding: 12px 24px;
+            border-radius: 14px;
+            margin-left: 16px;
+            min-width: 160px;
+            max-width: 380px;
+            text-align: center;
+            vertical-align: middle;
+            /* Apply SVG filter for gooey effect */
+            filter: url(#gooey-threshold);
+            transition: width 0.5s ease-out;
+            overflow: hidden; /* Clip any overflow */
+            box-shadow: 0 4px 20px rgba(30, 107, 184, 0.5),
+                        0 8px 40px rgba(139, 92, 246, 0.3);
+            /* GPU acceleration */
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            will-change: width;
+        }
+
+        .text-flip-word {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            filter: none;
+            transition: none;
+            /* Ensure width is measured correctly */
+            visibility: visible;
+            max-width: 340px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* GPU acceleration */
+            will-change: filter, opacity;
+            backface-visibility: hidden;
+        }
+
+        .text-flip-word-1 {
+            opacity: 1;
+            filter: blur(0px);
+        }
+
+        .text-flip-word-2 {
+            opacity: 0;
+            filter: blur(0px);
+        }
+
+        @media (max-width: 1400px) {
+            .text-flip-container {
+                max-width: 340px;
+                padding: 10px 20px;
+            }
+            
+            .text-flip-word {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .text-flip-container {
+                max-width: 300px;
+                padding: 10px 18px;
+            }
+            
+            .text-flip-word {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .text-flip-word {
+                font-size: 20px;
+            }
+            .text-flip-container {
+                padding: 8px 16px;
+                margin-left: 8px;
+                min-width: 150px;
+                max-width: 85vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text-flip-word {
+                font-size: 18px;
+            }
+            .text-flip-container {
+                padding: 10px 20px;
+                margin-left: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tubelight Navbar -->
+    <nav class="tubelight-nav" id="tubelightNav">
+        <a href="#home" class="nav-item active" data-page="home">
+            Home
+            <div class="tubelight-glow"></div>
+        </a>
+        <a href="#features" class="nav-item" data-page="features">Features</a>
+        <a href="#pricing" class="nav-item" data-page="pricing">Pricing</a>
+        <a href="#faq" class="nav-item" data-page="faq">FAQ</a>
+        <a href="#demo" class="nav-item" data-page="demo">Contact</a>
+    </nav>
+
+    <!-- Hero Section - Futuristic -->
+    <section id="home" class="hero">
+        <!-- Dot Grid Background -->
+        <div class="hero-dot-background"></div>
+
+        <!-- Pulsing Call Waves -->
+        <div class="call-waves">
+            <div class="call-wave"></div>
+            <div class="call-wave"></div>
+            <div class="call-wave"></div>
+        </div>
+
+        <!-- CSS 3D Phone Mockup -->
+        <div class="hero-phone-3d">
+            <div class="phone-3d-wrapper">
+                <div class="phone-frame-3d">
+                    <div class="phone-notch-3d"></div>
+                    <div class="phone-screen-3d">
+                        <div class="screen-content">
+                            <div class="status-bar">
+                                <span class="time">9:41</span>
+                                <div class="status-icons">
+                                    <span>📶</span>
+                                    <span>🔋</span>
+                                </div>
+                            </div>
+                            <div class="call-interface-3d">
+                                <div class="caller-info">
+                                    <div class="avatar-3d"></div>
+                                    <div class="caller-name">New Customer</div>
+                                    <div class="caller-status" id="phone-message">Welcome to NS Momentum!</div>
+                                </div>
+                                <div class="call-actions">
+                                    <div class="action-btn decline-3d">✕</div>
+                                    <div class="action-btn answer-3d">📞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Abstract Phone Icons (SVG) -->
+        <svg class="hero-phone-icon phone-icon-1" viewBox="0 0 100 100" fill="none">
+            <path d="M30 20 Q 40 30 30 40 L 20 50 Q 10 60 20 70 L 40 80 Q 50 90 60 80 L 80 60 Q 90 50 80 40 L 70 30 Q 60 20 50 30 Z" 
+                  stroke="rgba(102, 126, 234, 0.3)" stroke-width="2"/>
+        </svg>
+
+        <svg class="hero-phone-icon phone-icon-2" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="40" stroke="rgba(118, 75, 162, 0.3)" stroke-width="2"/>
+            <path d="M35 40 L 35 60 M 45 35 L 45 65 M 55 30 L 55 70 M 65 35 L 65 65" 
+                  stroke="rgba(118, 75, 162, 0.3)" stroke-width="2"/>
+        </svg>
+
+        <svg class="hero-phone-icon phone-icon-3" viewBox="0 0 100 100" fill="none">
+            <rect x="30" y="20" width="40" height="60" rx="8" 
+                  stroke="rgba(102, 126, 234, 0.3)" stroke-width="2"/>
+        </svg>
+        
+        <!-- SVG Filter for Gooey Text Effect -->
+        <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+            <defs>
+                <filter id="gooey-threshold">
+                    <feColorMatrix
+                        in="SourceGraphic"
+                        type="matrix"
+                        values="1 0 0 0 0
+                                0 1 0 0 0
+                                0 0 1 0 0
+                                0 0 0 255 -140"
+                    />
+                </filter>
+            </defs>
+        </svg>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1 class="hero-headline">
+                    <div class="hero-title-line">
+                        <span class="hero-word" style="animation-delay: 0s;">NEVER</span>
+                        <span class="hero-word" style="animation-delay: 0.6s;">MISS</span>
+                    </div>
+                    <div class="hero-title-line">
+                        <span class="hero-word" style="animation-delay: 1.2s;">ANOTHER</span>
+                        <span class="hero-word" style="animation-delay: 1.8s;">CALL</span>
+                    </div>
+                </h1>
+                
+                <div class="hero-subheadline">
+                    AI RECEPTIONISTS FOR
+                    <span class="text-flip-container" style="filter: url(#gooey-threshold);">
+                        <span class="text-flip-word text-flip-word-1"></span>
+                        <span class="text-flip-word text-flip-word-2"></span>
+                    </span>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#demo" class="btn btn-primary">
+                        Get Your Demo
+                        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <p style="color: #8892b0; font-size: 0.95rem;">Voice cloning included • 30-day guarantee</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Logo Cloud Section -->
+    <section class="logo-cloud-section">
+        <div class="logo-cloud-container">
+            <div class="logo-cloud-heading">
+                <div class="logo-cloud-subtitle">Trusted by experts</div>
+                <div class="logo-cloud-title">
+                    Used by the <span class="highlight">leaders</span>
+                </div>
+            </div>
+            
+            <div class="logo-divider"></div>
+            
+            <div class="infinite-slider-wrapper">
+                <div class="infinite-slider" id="logoSlider">
+                    <!-- Logos will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="logo-divider"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container">
+        <div class="section-header">
+            <h2>Why Choose NS Momentum</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Instant Response</h3>
+                <p>Never lose another lead to voicemail. Our AI answers in under 2 rings, every time, even at 3 AM.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3>Voice Cloning Technology</h3>
+                <p>Clone any voice to create a receptionist that sounds exactly like your preferred tone and style. Perfect brand consistency.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Personal Attention</h3>
+                <p>Unlike big companies, we treat every client like our most important one. You get dedicated support and custom solutions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3>Smart Lead Qualification</h3>
+                <p>Automatically qualify leads, capture contact information, and schedule appointments while you focus on closing deals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Flexible Custom Pricing</h3>
+                <p>Pay only for what you need. We create pricing plans that fit your business size and call volume perfectly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Natural Conversations</h3>
+                <p>Natural, intelligent conversations that your customers will love. No robotic responses or awkward pauses.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="container">
+        <div class="section-header">
+            <h2>How It Works</h2>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Setup &amp; Voice Cloning</h3>
+                <p>We set up your AI receptionist and clone your preferred voice in under 24 hours.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Smart Call Routing</h3>
+                <p>Calls are automatically answered and routed based on your business rules and preferences.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Lead Qualification</h3>
+                <p>Our AI asks the right questions to qualify leads and capture all necessary information.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Instant Notifications</h3>
+                <p>Get instant notifications with call summaries, lead details, and next steps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Request Section -->
+    <section id="demo" class="container">
+        <div class="section-header">
+            <h2>See It In Action - Get Your Custom Demo in 24 Hours</h2>
+        </div>
+        <p style="text-align: left; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem; font-size: 1.05rem;">Fill out the form below with your business details. We’ll send you a custom demo within 48 hours.</p>
+        <div class="form-section">
+            <div class="success-message" id="demoSuccessMessage">
+                ✓ Thank you! We'll send your custom demo within 24 hours.
+            </div>
+            <form action="https://formspree.io/f/mblpjbqk" method="POST" class="demo-form" id="demoForm">
+                <div class="form-group">
+                    <label for="business-name">Business Name:</label>
+                    <input type="text" id="business-name" name="business_name" placeholder="Your Business Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="website">Website (Optional):</label>
+                    <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="call-volume">Average Monthly Calls:</label>
+                    <input type="text" id="call-volume" name="call_volume" placeholder="e.g., 50-100 calls/month">
+                </div>
+                
+                <div class="form-group">
+                    <label for="current-system">Current Phone System:</label>
+                    <select id="current-system" name="current_system">
+                        <option value="">Select...</option>
+                        <option value="none">No current system</option>
+                        <option value="traditional">Traditional receptionist</option>
+                        <option value="voicemail">Voicemail only</option>
+                        <option value="answering-service">Answering service</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request Demo</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container">
+        <div class="section-header">
+            <h2>Transparent, Custom Pricing</h2>
+        </div>
+        <p style="text-align: left; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">Every business is unique. We create custom pricing plans based on your call volume, features needed, and specific requirements.</p>
+        <div class="pricing-cards-container">
+            <div class="pricing-card-starter">
+                <h3 class="pricing-card-title">Starter</h3>
+                <div class="pricing-card-price">Custom Pricing</div>
+                <ul class="pricing-card-features">
+                    <li><span class="feature-check">✓</span> Basic call handling</li>
+                    <li><span class="feature-check">✓</span> Voice cloning included</li>
+                    <li><span class="feature-check">✓</span> Email notifications</li>
+                    <li><span class="feature-check">✓</span> Up to 100 calls/month</li>
+                </ul>
+                <button class="pricing-card-button">Get Started</button>
+            </div>
+            <div class="pricing-card-professional">
+                <span class="best-deal-badge">Best Deal</span>
+                <h3 class="pricing-card-title">Professional</h3>
+                <div class="pricing-card-price">Custom Pricing</div>
+                <ul class="pricing-card-features">
+                    <li><span class="feature-check">✓</span> Everything in Starter</li>
+                    <li><span class="feature-check">✓</span> Advanced call routing</li>
+                    <li><span class="feature-check">✓</span> CRM integrations</li>
+                    <li><span class="feature-check">✓</span> Lead qualification</li>
+                    <li><span class="feature-check">✓</span> Up to 500 calls/month</li>
+                    <li><span class="feature-check">✓</span> Priority support</li>
+                </ul>
+                <button class="pricing-card-button">Go Pro</button>
+            </div>
+            <div class="pricing-card-enterprise">
+                <h3 class="pricing-card-title">Enterprise</h3>
+                <div class="pricing-card-price">Custom Pricing</div>
+                <ul class="pricing-card-features">
+                    <li><span class="feature-check">✓</span> Everything in Professional</li>
+                    <li><span class="feature-check">✓</span> Unlimited calls</li>
+                    <li><span class="feature-check">✓</span> Custom integrations</li>
+                    <li><span class="feature-check">✓</span> Dedicated account manager</li>
+                    <li><span class="feature-check">✓</span> Advanced analytics</li>
+                </ul>
+                <button class="pricing-card-button">Contact Sales</button>
+            </div>
+        </div>
+        <p style="text-align: left; color: var(--text-muted); max-width: 800px; margin: 2rem auto 0; font-size: 1.05rem;">Book a free consultation call and we’ll help you choose the perfect solution for your business needs and budget.</p>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does voice cloning work?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We use advanced AI technology to analyze voice samples and create a digital clone that captures tone, accent, and speaking style. The process is completely secure and takes less than 24 hours.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What makes you different from larger companies?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>As a small agency, we provide personalized attention to every client. You'll work directly with our team, get custom solutions, and receive support that actually cares about your success.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How quickly can I get started?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>After submitting your demo request, we'll send you a custom demo within 24 hours. If you're ready to proceed, we can have your AI receptionist live within one week.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What types of businesses do you work with?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We work with any business that receives phone calls - from healthcare and legal practices to home services and retail stores. Our AI adapts to your specific industry needs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What are your contract terms?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer flexible terms because we're confident in our service quality. Most clients choose month-to-month plans with the option to cancel with 30 days notice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book a Consultation Section -->
+    <section id="booking" class="container">
+        <div class="calendly-section">
+            <div class="section-header">
+                <h2>Ready to Transform Your Phone System?</h2>
+                <p>Book a free 30-minute consultation to discuss your needs.</p>
+            </div>
+            <!-- Replace with your Calendly URL: data-url="https://calendly.com/your-link" -->
+            <div class="calendly-inline-widget" 
+                 data-url="YOUR_CALENDLY_URL_HERE" 
+                 style="min-height:630px;">
+                <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                    <p style="font-size: 1.1rem; text-align: center;">📅 Calendly booking widget will appear here</p>
+                    <p style="margin-top: 1rem; text-align: center;">To enable: Add your Calendly URL to the data-url attribute above</p>
+                    <p style="margin-top: 2rem; text-align: center;">
+                        <a href="mailto:nsmomentum0@gmail.com" class="btn btn-primary">Email Us Instead</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="logo">NS Momentum</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">AI-Powered Phone Receptionists</p>
+                <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.9rem;">
+                    🚀 No social proof yet? Be our first success story and help us build amazing case studies together!
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="mailto:nsmomentum0@gmail.com">nsmomentum0@gmail.com</a>
+                <a href="#booking">Book a call</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NS Momentum. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tubelight navbar active state management
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        function updateActiveNav(clickedItem) {
+            // Remove active class and glow from all items
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                const existingGlow = item.querySelector('.tubelight-glow');
+                if (existingGlow) {
+                    existingGlow.remove();
+                }
+            });
+            
+            // Add active class and glow to clicked item
+            clickedItem.classList.add('active');
+            const glow = document.createElement('div');
+            glow.className = 'tubelight-glow';
+            clickedItem.appendChild(glow);
+        }
+        
+        // Click handler for nav items
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                updateActiveNav(item);
+            });
+        });
+        
+        // Update active state based on scroll position
+        const sections = ['home', 'features', 'pricing', 'faq', 'demo'];
+        window.addEventListener('scroll', () => {
+            let currentSection = 'home';
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            const activeItem = document.querySelector(`[data-page="${currentSection}"]`);
+            if (activeItem && !activeItem.classList.contains('active')) {
+                updateActiveNav(activeItem);
+            }
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQs
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Gooey Text Morphing for Industry Flip
+        (function() {
+            const industries = [
+                "Restaurants", "Law Firms", "Medical Offices", "Real Estate Agencies",
+                "Contractors", "Dental Practices", "Salons & Spas", "Auto Repair Shops",
+                "HVAC Companies", "Plumbers", "Electricians", "Accounting Firms",
+                "Insurance Agencies", "Veterinary Clinics", "Gyms & Fitness Studios",
+                "Home Services", "Property Management", "Landscaping Companies",
+                "Cleaning Services", "Chiropractors", "Physical Therapy",
+                "Mortgage Brokers", "Financial Advisors", "Pet Groomers"
+            ];
+
+            const morphTime = 1; // 1 second morph
+            const cooldownTime = 2; // 2 seconds cooldown (display time)
+            
+            let textIndex = 0;
+            let morph = 0;
+            let cooldown = cooldownTime;
+            let time = Date.now();
+            
+            const text1 = document.querySelector('.text-flip-word-1');
+            const text2 = document.querySelector('.text-flip-word-2');
+            const container = document.querySelector('.text-flip-container');
+            
+            if (!text1 || !text2 || !container) return;
+            
+            // Initialize
+            text1.textContent = industries[0];
+            text2.textContent = industries[1];
+            
+            // Set initial width
+            setTimeout(() => {
+                updateContainerWidth();
+            }, 100);
+            
+            function setMorph(fraction) {
+                // Text 2 (incoming)
+                const blur2 = Math.min(8 / fraction - 8, 100);
+                const opacity2 = Math.pow(fraction, 0.4) * 100;
+                text2.style.filter = `blur(${blur2}px)`;
+                text2.style.opacity = `${opacity2}%`;
+                
+                // Text 1 (outgoing)
+                fraction = 1 - fraction;
+                const blur1 = Math.min(8 / fraction - 8, 100);
+                const opacity1 = Math.pow(fraction, 0.4) * 100;
+                text1.style.filter = `blur(${blur1}px)`;
+                text1.style.opacity = `${opacity1}%`;
+                
+                // Update width during morph
+                updateContainerWidth();
+            }
+            
+            function doCooldown() {
+                morph = 0;
+                // Reset to clean state
+                text2.style.filter = 'blur(0px)';
+                text2.style.opacity = '100%';
+                text1.style.filter = 'blur(0px)';
+                text1.style.opacity = '0%';
+            }
+            
+            function doMorph() {
+                morph -= cooldown;
+                cooldown = 0;
+                
+                let fraction = morph / morphTime;
+                
+                if (fraction > 1) {
+                    cooldown = cooldownTime;
+                    fraction = 1;
+                }
+                
+                setMorph(fraction);
+                updateContainerWidth(); // Call every frame during morph
+            }
+            
+            function updateContainerWidth() {
+                // Force layout calculation
+                const text1Width = text1.scrollWidth || text1.offsetWidth;
+                const text2Width = text2.scrollWidth || text2.offsetWidth;
+                
+                // Use the maximum width to prevent clipping
+                const maxWidth = Math.max(text1Width, text2Width, 160);
+                
+                // Add padding (24px on each side = 48px total)
+                const containerWidth = maxWidth + 48;
+                
+                // CONSTRAIN: Don't exceed 380px to prevent phone overlap
+                const finalWidth = Math.min(containerWidth, 380);
+                
+                // Apply with smooth transition
+                container.style.width = finalWidth + 'px';
+            }
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                const newTime = Date.now();
+                const shouldIncrementIndex = cooldown > 0;
+                const dt = (newTime - time) / 1000;
+                time = newTime;
+                
+                cooldown -= dt;
+                
+                if (cooldown <= 0) {
+                    if (shouldIncrementIndex) {
+                        textIndex = (textIndex + 1) % industries.length;
+                        text1.textContent = industries[textIndex % industries.length];
+                        text2.textContent = industries[(textIndex + 1) % industries.length];
+                    }
+                    doMorph();
+                    updateContainerWidth();
+                } else {
+                    doCooldown();
+                }
+            }
+            
+            // Start animation
+            animate();
+            
+            // Update width on resize
+            window.addEventListener('resize', updateContainerWidth);
+        })();
+
+        // Formspree native form submission - no JavaScript needed
+        // The form will submit directly to Formspree using native HTML form submission
+        // Formspree will handle the submission and redirect to their success page
+
+        // Initialize Calendly widget if URL is provided
+        window.addEventListener('load', () => {
+            const calendlyWidget = document.querySelector('.calendly-inline-widget');
+            const calendlyUrl = calendlyWidget.getAttribute('data-url');
+            
+            if (calendlyUrl && calendlyUrl.trim() !== '') {
+                // Calendly script will automatically initialize the widget
+                console.log('Calendly widget ready');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Logo Cloud Implementation
+        (function() {
+            const logos = [
+                {
+                    src: "https://svgl.app/library/nvidia-wordmark-light.svg",
+                    alt: "Nvidia Logo"
+                },
+                {
+                    src: "https://svgl.app/library/supabase_wordmark_light.svg",
+                    alt: "Supabase Logo"
+                },
+                {
+                    src: "https://svgl.app/library/openai_wordmark_light.svg",
+                    alt: "OpenAI Logo"
+                },
+                {
+                    src: "https://svgl.app/library/turso-wordmark-light.svg",
+                    alt: "Turso Logo"
+                },
+                {
+                    src: "https://svgl.app/library/vercel_wordmark.svg",
+                    alt: "Vercel Logo"
+                },
+                {
+                    src: "https://svgl.app/library/github_wordmark_light.svg",
+                    alt: "GitHub Logo"
+                },
+                {
+                    src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg",
+                    alt: "Claude AI Logo"
+                },
+                {
+                    src: "https://svgl.app/library/clerk-wordmark-light.svg",
+                    alt: "Clerk Logo"
+                }
+            ];
+            
+            function initLogoCloud() {
+                const sliderContainer = document.getElementById('logoSlider');
+                if (!sliderContainer) return;
+                
+                // Create logos twice for seamless infinite scroll
+                const createLogos = () => {
+                    const fragment = document.createDocumentFragment();
+                    logos.forEach(logo => {
+                        const img = document.createElement('img');
+                        img.src = logo.src;
+                        img.alt = logo.alt;
+                        img.className = 'logo-item';
+                        img.loading = 'lazy';
+                        fragment.appendChild(img);
+                    });
+                    return fragment;
+                };
+                
+                // Add logos twice for seamless loop
+                sliderContainer.appendChild(createLogos());
+                sliderContainer.appendChild(createLogos());
+            }
+            
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initLogoCloud);
+            } else {
+                initLogoCloud();
+            }
+        })();
+
+
+
+        // Pricing card buttons scroll to demo
+        document.querySelectorAll('.pricing-card-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const demoSection = document.getElementById('demo');
+                if (demoSection) {
+                    demoSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // CSS 3D phone animations are purely CSS-based - no additional JS needed
+
+        // Interactive 3D Phone with Mouse Tracking
+        (function() {
+            const phoneWrapper = document.querySelector('.phone-3d-wrapper');
+            const heroSection = document.querySelector('.hero');
+            
+            if (!phoneWrapper || !heroSection) return;
+            
+            let mouseX = 0;
+            let mouseY = 0;
+            let currentX = 0;
+            let currentY = 0;
+            
+            // Track mouse position
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                
+                // Calculate mouse position relative to hero section (0 to 1)
+                mouseX = (e.clientX - rect.left) / rect.width;
+                mouseY = (e.clientY - rect.top) / rect.height;
+                
+                // Center the values (-0.5 to 0.5)
+                mouseX = (mouseX - 0.5) * 2;
+                mouseY = (mouseY - 0.5) * 2;
+            });
+            
+            // Smooth animation loop
+            function animatePhone() {
+                // Smooth interpolation (lerp)
+                currentX += (mouseX - currentX) * 0.1;
+                currentY += (mouseY - currentY) * 0.1;
+                
+                // Calculate rotation angles (max ±15 degrees)
+                const rotateY = currentX * 15;
+                const rotateX = -currentY * 15;
+                
+                // Apply transform with smooth transitions
+                phoneWrapper.style.transform = `
+                    rotateY(${rotateY}deg) 
+                    rotateX(${rotateX}deg) 
+                    translateY(${currentY * -10}px)
+                `;
+                
+                requestAnimationFrame(animatePhone);
+            }
+            
+            // Start animation
+            animatePhone();
+            
+            // Reset on mouse leave
+            heroSection.addEventListener('mouseleave', () => {
+                mouseX = 0;
+                mouseY = 0;
+            });
+        })();
+
+        // Cycling Messages on Phone Screen
+        (function() {
+            const messages = [
+                "Welcome to NS Momentum!",
+                "How can we help you?",
+                "Ready to level up your game?",
+                "Never miss another call!",
+                "AI receptionist at your service",
+                "24/7 availability guaranteed",
+                "Let's transform your business!",
+                "Your success is our mission"
+            ];
+            
+            const messageElement = document.getElementById('phone-message');
+            if (!messageElement) return;
+            
+            let currentIndex = 0;
+            
+            function cycleMessage() {
+                // Fade out
+                messageElement.style.opacity = '0';
+                
+                setTimeout(() => {
+                    // Change text
+                    currentIndex = (currentIndex + 1) % messages.length;
+                    messageElement.textContent = messages[currentIndex];
+                    
+                    // Fade in
+                    messageElement.style.opacity = '1';
+                }, 300); // Wait for fade out
+            }
+            
+            // Start cycling every 2.5 seconds
+            setInterval(cycleMessage, 2500);
+        })();
+    </script>
+</body>
+</html>
